@@ -466,7 +466,15 @@ Laundry Lux
 <script>  
 function toggleMenu(){  
 document.getElementById("navMenu").classList.toggle("active");  
-}  
+}
+
+document.addEventListener("click", function(e){
+let nav = document.getElementById("navMenu");
+let toggle = document.querySelector(".menu-toggle");
+if(nav.classList.contains("active") && !nav.contains(e.target) && !toggle.contains(e.target)){
+nav.classList.remove("active");
+}
+});  
 
 function sendWhatsApp(e){  
 e.preventDefault();  
